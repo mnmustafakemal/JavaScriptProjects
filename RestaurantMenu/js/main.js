@@ -100,6 +100,60 @@ cardDOM.forEach(function(cardDOM){
     price.textContent = items[currentItem].price
     textDOM.textContent = items[currentItem].text
     imgDOM.src = items[currentItem].img
+    cardDOM.classList.add(items[currentItem].id)
     currentItem++
+})
 
+//* BUTTON DOM
+
+let allButtonDOM = document.getElementById("all")
+let breakfastButtonDOM = document.getElementById("breakfast")
+let lunchButtonDOM = document.getElementById("lunch")
+let shakesButtonDOM = document.getElementById("shakes")
+let dinnerButtonDOM = document.getElementById("dinner")
+
+//* Click Event
+
+breakfastButtonDOM.addEventListener("click", function(){
+    cardDOM.forEach(function(card){
+        if(card.classList.contains("breakfast")){
+            card.classList.remove("d-none")
+        }
+        else{card.classList.add("d-none")}
+    })
+})
+
+lunchButtonDOM.addEventListener("click", function(){
+    cardDOM.forEach(function(card){
+        if(card.classList.contains("lunch")){
+            card.classList.remove("d-none")
+        }
+        else{card.classList.add("d-none")}
+    })
+})
+
+shakesButtonDOM.addEventListener("click", function(){
+    cardDOM.forEach(function(card){
+        if(card.classList.contains("shakes")){
+            card.classList.remove("d-none")
+        }
+        else{card.classList.add("d-none")}
+    })
+})
+
+dinnerButtonDOM.addEventListener("click", function(){
+    cardDOM.forEach(function(card){
+        if(card.classList.contains("dinner")){
+            card.classList.remove("d-none")
+        }
+        else{card.classList.add("d-none")}
+    })
+})
+
+allButtonDOM.addEventListener("click", function(){
+    cardDOM.forEach(function(card){
+        if(card.classList.contains("card")){
+            card.classList.remove("d-none")
+        }
+    })
 })
